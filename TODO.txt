@@ -1,0 +1,3 @@
+- finish screen
+- turns display
+- restart
