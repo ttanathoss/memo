@@ -16,7 +16,7 @@ export const prepareCards = ({ pairCount }: PrepareCardsProps): MemoCardData[] =
   const seed = Math.floor(Math.random() * 10000);
   const ret = [];
   for (let i = 0; i < pairCount; i += 1) {
-    const img = `https://picsum.photos/seed/${seed + i}/200`;
+    const img = `https://picsum.photos/seed/${seed + i}/256`;
     ret.push({ id: Math.random(), img, matched: false });
     ret.push({ id: Math.random(), img, matched: false });
   }

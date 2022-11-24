@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2';
 
-import { useCardsPreloader } from '../hooks';
-import type { GameSettings, MemoCardDataExt } from '../models';
-import { prepareCards } from '../utils';
+import { useCardsPreloader } from '../../hooks';
+import type { GameSettings, MemoCardDataExt } from '../../models';
+import { prepareCards } from '../../utils';
 import Loader from './Loader';
 import MemoCard from './MemoCard';
 

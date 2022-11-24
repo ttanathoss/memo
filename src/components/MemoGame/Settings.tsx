@@ -8,8 +8,8 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import TextField from '@mui/material/TextField';
 
-import { CATEGORIES, DIFFICULTIES, PAIRS_MAX, PAIRS_MIN } from '../constants';
-import type { SettingsProps } from '../models';
+import { CATEGORIES, DIFFICULTIES, PAIRS_MAX, PAIRS_MIN } from '../../constants';
+import type { SettingsProps } from '../../models';
 
 const Settings = ({ gameSettings, handleSettings }: SettingsProps) => {
   const { category, flipTimeout } = gameSettings;

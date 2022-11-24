@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardMedia from '@mui/material/CardMedia';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2';
 
-import type { MemoCardProps } from '../models';
-import { CARD_BACK_CONTENT } from '../utils';
+import type { MemoCardProps } from '../../models';
+import { CARD_BACK_CONTENT } from '../../utils';
 
 const MemoCard = ({ card, handleChoice, disabled }: MemoCardProps) => {
   const { img, matched } = card;
@@ -30,7 +30,7 @@ const MemoCard = ({ card, handleChoice, disabled }: MemoCardProps) => {
   }, [flipped, matched, img]);
 
   return (
-    <Grid item xs={3}>
+    <Grid xs={6} sm={4} md={3}>
       <Card
         onClick={handleFlip}
         sx={{
