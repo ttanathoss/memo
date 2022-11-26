@@ -1,12 +1,16 @@
-export const CATEGORIES = ['Random', 'Animals', 'Games'];
+export const CATEGORIES = [
+  { value: 'random', translationKey: 'settings.categories.random' },
+  { value: 'animals', translationKey: 'settings.categories.animals' },
+  { value: 'games', translationKey: 'settings.categories.games' },
+];
 
 export const PAIRS_MIN = 2;
 export const PAIRS_MAX = 25;
 
 export const DIFFICULTIES = [
-  { label: 'Super easy', value: 2000 },
-  { label: 'Easy', value: 1000 },
-  { label: 'Medium', value: 750 },
-  { label: 'Hard', value: 400 },
-  { label: 'PRO', value: 200 },
+  { translationKey: 'settings.difficulties.superEasy', value: 2000 },
+  { translationKey: 'settings.difficulties.easy', value: 1000 },
+  { translationKey: 'settings.difficulties.medium', value: 750 },
+  { translationKey: 'settings.difficulties.hard', value: 400 },
+  { translationKey: 'settings.difficulties.pro', value: 200 },
 ];

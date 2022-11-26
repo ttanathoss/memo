@@ -1,10 +1,11 @@
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
-import Typography from '@mui/material/Typography';
+
+import LocalisedTypography from '../LocalisedTypography';
 
 const Loader = () => (
   <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-    <Typography color="text.secondary">Loading...</Typography>
+    <LocalisedTypography color="text.secondary" translationKey="loadingText" />
     <Box sx={{ width: '100%', mt: 1 }}>
       <LinearProgress />
     </Box>

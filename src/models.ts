@@ -32,3 +32,27 @@ export type SettingsProps = {
   gameSettings: GameSettings;
   handleSettings: (newGameSettings: GameSettings) => void;
 };
+
+export interface TranslationObject extends Record<string, string | TranslationObject> {}
+
+export type GetTranslationFun = (
+  translationKey: string,
+  props?: Record<string, string | number>
+) => string;
+
+export type ContextProps = {
+  language: string;
+  getTranslation: GetTranslationFun;
+  updateLanguage: (newLanguage: string) => void;
+};
+
+export type HeaderProps = {
+  language: string;
+  handleUpdateLanguage: (value: string) => void;
+};
+
+export type AvailableLang = {
+  label: string;
+  value: string;
+  flagCode: string;
+};

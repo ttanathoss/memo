@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 
 import { useCardsPreloader } from '../../hooks';
@@ -24,14 +24,14 @@ const Game = ({ category, pairCount, flipTimeout }: GameSettings) => {
     }
   };
 
-  const newTurn = () => {
+  const newTurn = useCallback(() => {
     choiceOne!.flipBack();
     choiceTwo!.flipBack();
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurn((prevTurn) => prevTurn + 1);
     setAllDisabled(false);
-  };
+  }, [choiceOne, choiceTwo]);
 
   useEffect(() => {
     if (!choiceOne || !choiceTwo) return;
@@ -46,7 +46,7 @@ const Game = ({ category, pairCount, flipTimeout }: GameSettings) => {
     } else {
       setTimeout(newTurn, flipTimeout);
     }
-  }, [choiceOne, choiceTwo]);
+  }, [choiceOne, choiceTwo, flipTimeout, newTurn]);
 
   return preloadingDone ? (
     <Grid container spacing={4} sx={{ cursor: allDisabled ? 'wait' : 'auto' }}>

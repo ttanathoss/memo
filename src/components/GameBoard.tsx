@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 
 import { CATEGORIES, DIFFICULTIES } from '../constants';
 import { GameSettings } from '../models';
+import LocalisedTypography from './LocalisedTypography';
 import { MemoGame, Settings } from './MemoGame';
 
 const GameBoard = () => {
   const [showSettings, setShowSettings] = useState(true);
   const [gameSettings, setGameSettings] = useState<GameSettings>({
-    category: CATEGORIES[0],
+    category: CATEGORIES[0].value,
     pairCount: 8,
     flipTimeout: DIFFICULTIES[1].value,
   });
@@ -30,14 +30,21 @@ const GameBoard = () => {
       }}
     >
       <Container maxWidth="md">
-        <Typography component="h1" variant="h2" align="center" color="text.primary" gutterBottom>
-          Welcome to react memo game!
-        </Typography>
-        <Typography variant="h5" align="center" color="text.secondary" paragraph>
-          Probably everyone knows how to play memo:
-          <br />
-          Just click on cards below to flip them and search for matching pairs as fast as you can!
-        </Typography>
+        <LocalisedTypography
+          component="h1"
+          variant="h2"
+          align="center"
+          color="text.primary"
+          gutterBottom
+          translationKey="welcome.title"
+        />
+        <LocalisedTypography
+          variant="h5"
+          align="center"
+          color="text.secondary"
+          paragraph
+          translationKey="welcome.description"
+        />
       </Container>
       <Container sx={{ py: 8 }} maxWidth="lg">
         {showSettings ? (
