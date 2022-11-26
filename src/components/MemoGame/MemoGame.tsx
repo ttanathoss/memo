@@ -9,7 +9,7 @@ import MemoCard from './MemoCard';
 
 const Game = ({ category, pairCount, flipTimeout }: GameSettings) => {
   const [cards, setCards] = useState(prepareCards({ pairCount, category }));
-  const [turn, setTurn] = useState(0);
+  const [, setTurn] = useState(0);
   const [choiceOne, setChoiceOne] = useState<MemoCardDataExt | null>(null);
   const [choiceTwo, setChoiceTwo] = useState<MemoCardDataExt | null>(null);
   const [allDisabled, setAllDisabled] = useState(false);
