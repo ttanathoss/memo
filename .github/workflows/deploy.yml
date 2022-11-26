@@ -34,14 +34,10 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install # will run `yarn install` command
+        run: yarn install
 
       - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build # will run `yarn build` command
+        run: yarn build # will run `yarn build` command
 
       - name: Upload build files
         uses: actions/upload-pages-artifact@v1
