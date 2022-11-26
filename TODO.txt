@@ -1,3 +1,4 @@
 - finish screen
-- turns display
+- taken turns display
 - restart
+- footer
