@@ -4,6 +4,18 @@ export const CATEGORIES = [
   { value: 'games', translationKey: 'settings.categories.games' },
 ];
 
+export enum BackStyle {
+  Image = 'image',
+  SolidColor = 'solid',
+}
+export const BACK_IMAGES = [
+  'https://picsum.photos/seed/picsum/200',
+  'https://picsum.photos/seed/picsum4/200',
+  'https://picsum.photos/seed/picsum8/200',
+  'https://picsum.photos/seed/picsum10/200',
+];
+export const DEFAULT_BACK_COLOR = 'hsl(0, 100%, 25%)';
+
 export const PAIRS_MIN = 2;
 export const PAIRS_MAX = 25;
 

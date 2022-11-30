@@ -1,6 +1,6 @@
 export default {
   welcome: {
-    title: 'Welcome to React memo game!',
+    title: "Let's play memory (in React)!",
     description:
       'Probably everyone knows how to play memo:<br />Just click on cards to flip them and search for matching pairs as fast as you can!',
   },
@@ -12,6 +12,14 @@ export default {
     labels: {
       category: 'Images category',
       pairCount: 'Number of pairs',
+      difficulty: 'Difficulty',
+      backStyle: 'Cards back style',
+      backImage: 'Select back image',
+      backColor: 'Select back color',
+    },
+    styles: {
+      image: 'Image',
+      solid: 'Solid color',
     },
     categories: {
       random: 'Random',
@@ -26,6 +34,10 @@ export default {
       pro: 'PRO',
     },
     newGame: 'Start new game',
+  },
+  card: {
+    backText: 'Click to flip!',
+    frontText: 'Card set {{img}}',
   },
   loadingText: 'Loading, please wait...',
 };

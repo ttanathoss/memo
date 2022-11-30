@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
-import { CATEGORIES, DIFFICULTIES } from '../constants';
+import { BACK_IMAGES, BackStyle, CATEGORIES, DIFFICULTIES } from '../constants';
 import { GameSettings } from '../models';
 import LocalisedTypography from './LocalisedTypography';
 import { MemoGame, Settings } from './MemoGame';
@@ -11,8 +11,10 @@ const GameBoard = () => {
   const [showSettings, setShowSettings] = useState(true);
   const [gameSettings, setGameSettings] = useState<GameSettings>({
     category: CATEGORIES[0].value,
-    pairCount: 8,
+    pairCount: 6,
     flipTimeout: DIFFICULTIES[1].value,
+    backStyle: BackStyle.Image,
+    backContent: BACK_IMAGES[0],
   });
 
   const handleSettings = (newGameSettings: GameSettings) => {
@@ -25,8 +27,7 @@ const GameBoard = () => {
       component="main"
       sx={{
         bgcolor: 'background.paper',
-        pt: 8,
-        pb: 6,
+        py: 2,
       }}
     >
       <Container maxWidth="md">
@@ -46,7 +47,7 @@ const GameBoard = () => {
           translationKey="welcome.description"
         />
       </Container>
-      <Container sx={{ py: 8 }} maxWidth="lg">
+      <Container sx={{ py: 3 }} maxWidth="lg">
         {showSettings ? (
           <Settings gameSettings={gameSettings} handleSettings={handleSettings} />
         ) : (

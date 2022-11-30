@@ -12,6 +12,14 @@ export default {
     labels: {
       category: 'Kategoria obrazków',
       pairCount: 'Liczba par',
+      difficulty: 'Poziom trudności',
+      backStyle: 'Rewers kart',
+      backImage: 'Wybierz obrazek rewersu',
+      backColor: 'Wybierz kolor rewersu',
+    },
+    styles: {
+      image: 'Obraz',
+      solid: 'Jednolity kolor',
     },
     categories: {
       random: 'Losowe',
@@ -26,6 +34,10 @@ export default {
       pro: 'PRO',
     },
     newGame: 'Rozpocznij nową grę',
+  },
+  card: {
+    backText: 'Kliknij aby obrócić!',
+    frontText: 'Para {{img}}',
   },
   loadingText: 'Ładowanie, proszę czekaj...',
 };

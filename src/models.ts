@@ -1,3 +1,5 @@
+import { BackStyle } from './constants';
+
 export type MemoCardData = {
   id: number;
   img: string;
@@ -18,6 +20,8 @@ export type HandleChoice = (choice: MemoCardDataExt) => void;
 
 export type MemoCardProps = {
   card: MemoCardData;
+  backStyle: BackStyle;
+  backContent: string;
   handleChoice: HandleChoice;
   disabled: boolean;
 };
@@ -26,6 +30,12 @@ export type GameSettings = {
   category: string;
   pairCount: number;
   flipTimeout: number;
+  backStyle: BackStyle;
+  backContent: string;
+};
+
+export type MemoGameProps = GameSettings & {
+  backToSettings: () => void;
 };
 
 export type SettingsProps = {

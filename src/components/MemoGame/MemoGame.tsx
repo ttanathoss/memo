@@ -2,13 +2,13 @@ import { useCallback, useEffect, useState } from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 
 import { useCardsPreloader } from '../../hooks';
-import type { GameSettings, MemoCardDataExt } from '../../models';
+import type { MemoCardData, MemoCardDataExt, MemoGameProps } from '../../models';
 import { prepareCards } from '../../utils';
 import Loader from './Loader';
 import MemoCard from './MemoCard';
 
-const Game = ({ category, pairCount, flipTimeout }: GameSettings) => {
-  const [cards, setCards] = useState(prepareCards({ pairCount, category }));
+const MemoGame = ({ category, pairCount, flipTimeout, backStyle, backContent }: MemoGameProps) => {
+  const [cards, setCards] = useState<MemoCardData[]>(prepareCards({ pairCount, category }));
   const [, setTurn] = useState(0);
   const [choiceOne, setChoiceOne] = useState<MemoCardDataExt | null>(null);
   const [choiceTwo, setChoiceTwo] = useState<MemoCardDataExt | null>(null);
@@ -51,7 +51,14 @@ const Game = ({ category, pairCount, flipTimeout }: GameSettings) => {
   return preloadingDone ? (
     <Grid container spacing={4} sx={{ cursor: allDisabled ? 'wait' : 'auto' }}>
       {cards.map((card) => (
-        <MemoCard key={card.id} card={card} handleChoice={handleChoice} disabled={allDisabled} />
+        <MemoCard
+          key={card.id}
+          card={card}
+          backStyle={backStyle}
+          backContent={backContent}
+          handleChoice={handleChoice}
+          disabled={allDisabled}
+        />
       ))}
     </Grid>
   ) : (
@@ -59,4 +66,4 @@ const Game = ({ category, pairCount, flipTimeout }: GameSettings) => {
   );
 };
 
-export default Game;
+export default MemoGame;
