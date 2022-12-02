@@ -91,7 +91,7 @@ const useGameLogic = ({
   }, [choiceOne, choiceTwo]);
 
   const newGame = () => {
-    setCards(prepareCards({ pairCount: 2, category }));
+    setCards(prepareCards({ pairCount, category }));
     setTurns(0);
     setChoiceOne(null);
     setChoiceTwo(null);
