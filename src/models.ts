@@ -66,3 +66,10 @@ export type AvailableLang = {
   value: string;
   flagCode: string;
 };
+
+export type SummaryProps = {
+  turns: number;
+  seconds: number;
+  open: boolean;
+  handleClose: (showSettings: boolean) => void;
+};

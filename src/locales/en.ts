@@ -39,5 +39,11 @@ export default {
     backText: 'Click to flip!',
     frontText: 'Card set {{img}}',
   },
+  summary: {
+    title: 'Congratulations!',
+    message: 'You played for {{turns}} turns, it took you {{seconds}} seconds',
+    newGame: 'New Game',
+    backToSettings: 'Change settings',
+  },
   loadingText: 'Loading, please wait...',
 };

@@ -39,5 +39,11 @@ export default {
     backText: 'Kliknij aby obrócić!',
     frontText: 'Para {{img}}',
   },
+  summary: {
+    title: 'Gratulacje!',
+    message: 'Gra skończona! Liczba tur: {{turns}}, zajęło Ci to {{seconds}} sekund',
+    newGame: 'New Game',
+    backToSettings: 'Change settings',
+  },
   loadingText: 'Ładowanie, proszę czekaj...',
 };

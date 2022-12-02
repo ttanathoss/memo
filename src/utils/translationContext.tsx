@@ -38,9 +38,11 @@ export const TranslationProvider = ({ children }: PropsWithChildren) => {
     (translationKey: string, props: Record<string, string | number> = {}) => {
       const splitted = translationKey.split('.');
       const initialTranslation = getTranslationInner(translations, splitted);
-
       const finalTranslation = Object.entries(props).reduce(
-        (translation, [key, value]) => translation.replaceAll(`{{${key}}}`, value.toString()),
+        (translation, [key, value]) =>
+          value === undefined
+            ? translation
+            : translation.replaceAll(`{{${key}}}`, value.toString()),
         initialTranslation || translationKey
       );
 

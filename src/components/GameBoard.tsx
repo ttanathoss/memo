@@ -22,6 +22,8 @@ const GameBoard = () => {
     setGameSettings(newGameSettings);
   };
 
+  const backToSettings = () => setShowSettings(true);
+
   return (
     <Box
       component="main"
@@ -51,7 +53,7 @@ const GameBoard = () => {
         {showSettings ? (
           <Settings gameSettings={gameSettings} handleSettings={handleSettings} />
         ) : (
-          <MemoGame {...gameSettings} />
+          <MemoGame {...gameSettings} backToSettings={backToSettings} />
         )}
       </Container>
     </Box>
